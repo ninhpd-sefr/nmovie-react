@@ -1,0 +1,11 @@
+.homePage__content{
+    display: flex;
+    min-height: 1000px;
+    padding: 0 10px;
+}
+.homePage__content-left{
+    width: 10%;
+}
+.homePage__content-right{
+    width: 90%;
+}

@@ -1,16 +1,18 @@
 import React from 'react';
 import './homePage.css'
-import { Link } from "react-router-dom";
 import Header from '../../components/Header/Header'
-import SeriesFirm from '../../components/SeriesFirm/SeriesFirm'
 import FirmSingle from '../../components/FirmSingle/FirmSingle'
 import FirmGenres from '../../components/FirmGenres/FirmGenres'
+import FirmSeries from '../../components/FirmSeries/SeriesFirm';
 import Footer from '../../components/Footer/Footer'
 import Slider from '../../components/Slider/Slider';
 import NavBar from '../../components/NavBar/NavBar';
+import FirmCountry from '../../components/FirmCountry/FirmCountry';
 
 
-function HomePage(props) {
+
+
+function HomePage(props) { 
     return (
         <div>
             <Header />
@@ -20,12 +22,13 @@ function HomePage(props) {
                 </div>
                 <div className='homePage__content-right'>
                     <Slider />
-                    <SeriesFirm />
+                    <FirmSeries />
                     <FirmSingle />
                     <FirmGenres />
-                    <Footer />
+                    <FirmCountry />
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

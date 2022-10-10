@@ -1,6 +1,6 @@
 .header_wrapper {
     background-color: white;
-    width: 100vw;
+    /* width: 100vw; */
     height: 100px;
     display: flex;
 
@@ -42,6 +42,8 @@
     position: absolute;
     left: 28%;
     top: 38%;
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 .header__search-input {

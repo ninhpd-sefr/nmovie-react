@@ -1,11 +1,11 @@
 import React from 'react';
 import './firmSingle.css'
+import FirmList from '../FirmList/FirmList';
 
-function FirmSingle(props) {
+
+function FirmSingle() {
     return (
-        <div>
-            FirmSingle
-        </div>
+    <FirmList title= 'FirmSingle' type='row' />
     );
 }
 

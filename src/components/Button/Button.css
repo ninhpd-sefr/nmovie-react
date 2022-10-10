@@ -8,11 +8,12 @@
     font-weight: 600;
     padding: 0.3rem 1.5rem;
     cursor: pointer;
+    text-decoration: none;
     -webkit-transition: all 250ms ease;
     transition: all 250ms ease;
     border: 10px; }
     .btn-default {
-      color: #718096;
+      color: black;
       background-color: #e2e8f0; }
       .btn-default:hover {
         color: #fff;
@@ -33,7 +34,7 @@
         background-color: #718096; }
     .btn-size-large {
       font-size: 1rem;
-      padding: 0.3rem 3rem;
+      padding: 0.5rem 3rem;
       font-weight: 400;
       border-radius: 9999px; }
     .btn svg {

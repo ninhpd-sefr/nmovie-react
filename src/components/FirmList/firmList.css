@@ -1,0 +1,21 @@
+.firm-list{
+    min-height: 500px;
+}
+
+.firm-list-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.firm-list-title h1{
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.firm-list-item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

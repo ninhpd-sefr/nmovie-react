@@ -1,14 +1,32 @@
-import React from 'react';
 import './header.css'
+import React from 'react';
+import Button from '../Button/Button';
+import { useNavigate, Link } from 'react-router-dom';
 import images from '../../assets/images/logo.png'
 import { FaSistrix } from 'react-icons/fa'
-import Button from '../Button/Button';
+import { useSelector, useDispatch } from 'react-redux';
+import { actionIncreaseAsync } from '../../redux/action';
 
 
 function Header(props) {
+    const state = useSelector(intState => intState)
+
+    const dispatch = useDispatch()
+    const incre = () => {
+        dispatch(actionIncreaseAsync())
+        console.log("state", state);
+
+    }
+    const navigation = useNavigate();
+
+    const toSearch = () => {
+        navigation('search')
+    }
+
+
     return (
         <div className='header_wrapper'>
-            <div className='header__logo'>
+            <div className='header__logo' onClick={incre}>
                 <div className='header__logo-img'>
                     <img src={images} alt='logo' />
                 </div>
@@ -18,7 +36,7 @@ function Header(props) {
             </div>
 
             <div className='header__search'>
-                <div className='header__search-icon'>
+                <div className='header__search-icon' onClick={toSearch}>
                     <FaSistrix size={23} />
                 </div>
                 <div className='header__search-input'>
@@ -27,7 +45,7 @@ function Header(props) {
             </div>
 
             <div className='header__login'>
-                <Button content='Login' type='primary' />
+                <Button as='a' content='Login' type='primary' />
             </div>
         </div>
     );
