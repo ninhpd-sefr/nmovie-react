@@ -21,7 +21,6 @@ function HomePage(props) {
         dispatch(actionGetFirmSingleAsync())
         dispatch(actionGetFirmGenresAsync())
         dispatch(actionGetFirmCountryAsync('au-my'))
-        
     },[])
     return (
         <div>

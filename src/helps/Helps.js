@@ -1,5 +1,5 @@
 
-
+// edit data item firm
 export const mappingDataItemFirm = (data)=>{
     const itemData = {
         id: data._id,
@@ -13,7 +13,7 @@ export const mappingDataItemFirm = (data)=>{
     return itemData
 }
 
-
+// limit amount firm home page
 export const listFirmHomePage = (list)=>{
     let listFirm = []
     if(list){
@@ -26,4 +26,7 @@ export const listFirmHomePage = (list)=>{
     
 
 }
+
+// get action form list detail page
+
  

@@ -5,8 +5,12 @@ import FirmDetail from '../FirmDetail/FirmDetail';
 import './firmList.css'
 
 function FirmList({
-    title, type, list
+    title, type, list,dataFirm
 }) {
+
+    const slugList = `listDetail/${dataFirm.type_list}`
+    
+    
     
     let listFirmHome = listFirmHomePage(list);    
     if(!listFirmHome){
@@ -14,13 +18,14 @@ function FirmList({
     }
     
     
+
     return (
         <div className='firm-list'>
             <div className='firm-list-title'>
                 <h1>
                     {title}
                 </h1>
-                <Button content='See details' />
+                <Button content='See details' as='a' to={slugList}/>
             </div>
             <div className='firm-list-item'>
                {

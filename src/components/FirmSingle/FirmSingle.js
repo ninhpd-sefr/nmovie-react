@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 function FirmSingle() {
     const dataFirm = useSelector(state => state.firmSingle)
     const itemsFirm = dataFirm.items
+
     if(!itemsFirm){
         return
     }
@@ -20,7 +21,7 @@ function FirmSingle() {
         ))
     } 
     return (
-    <FirmList title= 'FirmSingle' type='row' list={itemFirmMap} />
+    <FirmList title= 'FirmSingle' dataFirm = {dataFirm} type='row' list={itemFirmMap} />
     );
 }
 

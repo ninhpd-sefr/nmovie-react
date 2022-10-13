@@ -7,8 +7,7 @@ import './firmSeries.css'
 function FirmSeries(props) {
     const dataFirm = useSelector(state => state.firmSeries)
     const itemsFirm = dataFirm.items
-    console.log(dataFirm.type_list);
-    
+        
     if(!itemsFirm){
         return
     }
@@ -21,7 +20,7 @@ function FirmSeries(props) {
         ))
     }    
     return (
-       <FirmList　title='FirmSeries' list = {itemFirmMap} />
+       <FirmList　title='FirmSeries' dataFirm ={dataFirm} list = {itemFirmMap} />
     );
 }
 
