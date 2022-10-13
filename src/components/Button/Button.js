@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import './Button.css'
 
 function Button({
-    content, size, type = 'default', as = 'button'
+    content, size, type = 'default', as = 'button',to = 'login'
 }) {
 
     const classes = cls('btn', {
@@ -13,8 +13,9 @@ function Button({
         'btn-primary': type === 'primary',
         'btn-size-large': size === 'large'
     })
+    
     return (
-        as == 'a' ? <Link to='login' className={classes}>
+        as == 'a' ? <Link to={to} className={classes}>
             {content}
         </Link> : <button className={classes}>
             {content}

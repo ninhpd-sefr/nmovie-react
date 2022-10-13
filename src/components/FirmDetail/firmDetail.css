@@ -23,10 +23,15 @@
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     padding-left: 10px;
+    
 }
 
 .firm-detail-title-row h3{
     color: white;
+    white-space: nowrap;
+    width: 80%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .firm-detail-img{
@@ -86,6 +91,13 @@
     margin-top: 10px;
     font-size: 15px;
     transition: 0.3s;
+}
+
+.firm-detail-title h3{
+    white-space: nowrap;
+    width: 80%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .firm-detail-title:hover{

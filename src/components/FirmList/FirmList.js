@@ -1,11 +1,19 @@
 import React from 'react';
+import { listFirmHomePage } from '../../helps/Helps';
 import Button from '../Button/Button';
 import FirmDetail from '../FirmDetail/FirmDetail';
 import './firmList.css'
 
 function FirmList({
-    title,type
+    title, type, list
 }) {
+    
+    let listFirmHome = listFirmHomePage(list);    
+    if(!listFirmHome){
+        return
+    }
+    
+    
     return (
         <div className='firm-list'>
             <div className='firm-list-title'>
@@ -15,14 +23,11 @@ function FirmList({
                 <Button content='See details' />
             </div>
             <div className='firm-list-item'>
-                <FirmDetail type={type} />
-                <FirmDetail type={type} />
-                <FirmDetail type={type} />
-                <FirmDetail type={type} />
-                <FirmDetail type={type} />
-                <FirmDetail type={type} />
-                <FirmDetail type={type} />
-                <FirmDetail type={type} />
+               {
+                 listFirmHome.map(item =>(
+                    <FirmDetail type={type} item = {item} />
+                ))
+               }
             </div>
 
 

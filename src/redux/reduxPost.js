@@ -1,27 +1,39 @@
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import { getFirmItem, getItemFirm, getListFirm,getFirmSearch } from '../services/GetFirm';
-import { DECREMENT, INCREMENT } from './action'
+import { getFirmItem, getItemFirm, getListFirm, getFirmSearch, getFirmSeries } from '../services/GetFirm';
+import { ACTION_GET_COUNTRY_FIRM, ACTION_GET_GENRES_FIRM, ACTION_GET_SERIES_FIRM, ACTION_GET_SINGLE_FIRM } from './action'
 
 const intState = {
     firmSeries: [],
-    state: 0
+    firmSingle: [],
+    firmGenres: [],
+    firmCountry: []
 }
 
 
 function counter(state = intState, action) {
     switch (action.type) {
-        case INCREMENT:
-            getFirmSearch('ninh')
+        case ACTION_GET_SERIES_FIRM:
             return {
                 ...state,
-                state: state.state + 1
+                firmSeries: action.payload,
             }
-        case DECREMENT:
+        case ACTION_GET_SINGLE_FIRM:
             return {
                 ...state,
-                state: state.state - 1
+                firmSingle: action.payload
             }
+        case ACTION_GET_GENRES_FIRM:
+            return {
+                ...state,
+                firmGenres: action.payload
+            }
+        case ACTION_GET_COUNTRY_FIRM:            
+            return {
+                ...state,
+                firmCountry: action.payload
+            }
+
         default:
             return state
     }

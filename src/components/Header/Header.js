@@ -1,22 +1,16 @@
 import './header.css'
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from '../Button/Button';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import images from '../../assets/images/logo.png'
 import { FaSistrix } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux';
-import { actionIncreaseAsync } from '../../redux/action';
 
 
 function Header(props) {
     const state = useSelector(intState => intState)
 
     const dispatch = useDispatch()
-    const incre = () => {
-        dispatch(actionIncreaseAsync())
-        console.log("state", state);
-
-    }
     const navigation = useNavigate();
 
     const toSearch = () => {
@@ -26,7 +20,7 @@ function Header(props) {
 
     return (
         <div className='header_wrapper'>
-            <div className='header__logo' onClick={incre}>
+            <div className='header__logo'>
                 <div className='header__logo-img'>
                     <img src={images} alt='logo' />
                 </div>
