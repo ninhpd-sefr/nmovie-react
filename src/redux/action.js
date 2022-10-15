@@ -1,10 +1,12 @@
 import { Await } from "react-router"
-import { getFirmCountry, getFirmGenres, getFirmSeries } from "../services/GetFirm"
+import { getFirmCountry, getFirmGenres, getFirmListDetails, getFirmSeries } from "../services/GetFirm"
 
 export const ACTION_GET_SERIES_FIRM = 'ACTION_GET_SERIES_FIRM'
 export const ACTION_GET_SINGLE_FIRM = 'ACTION_GET_SINGLE_FIRM'
 export const ACTION_GET_GENRES_FIRM = 'ACTION_GET_GENRES_FIRM'
 export const ACTION_GET_COUNTRY_FIRM = 'ACTION_GET_COUNTRY_FIRM'
+export const ACTION_GET_LIST_FIRM_DETAILS = 'ACTION_GET_LIST_FIRM_DETAILS'
+
 
 
 export const actionGetFirmSeries = ({
@@ -44,6 +46,16 @@ export const actionGetFirmCountry = ({
   
   return {
     type: ACTION_GET_COUNTRY_FIRM,
+    payload:data
+  }
+}
+
+export const actionGetFirmListDetails = ({
+  data
+}) => {
+  
+  return {
+    type: ACTION_GET_LIST_FIRM_DETAILS,
     payload:data
   }
 }
@@ -101,6 +113,19 @@ export function actionGetFirmCountryAsync(country) {
       dispatch(actionGetFirmCountry({
         data
       }))
+    } catch (err) {
+      // TODO 
+    }
+  }
+}
+
+export function actionGetFirmListDetailsAsync(type,details) {
+  return async dispatch => {
+    try {
+      const dataApi = await getFirmListDetails(type,details)
+      const data = dataApi.pageProps.data            
+      dispatch(actionGetFirmListDetails({data}))
+      
     } catch (err) {
       // TODO 
     }

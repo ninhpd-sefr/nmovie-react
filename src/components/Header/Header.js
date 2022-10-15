@@ -1,16 +1,12 @@
 import './header.css'
-import React, { useEffect } from 'react';
+import React from 'react';
 import Button from '../Button/Button';
 import { useNavigate } from 'react-router-dom';
 import images from '../../assets/images/logo.png'
 import { FaSistrix } from 'react-icons/fa'
-import { useSelector, useDispatch } from 'react-redux';
 
 
 function Header(props) {
-    const state = useSelector(intState => intState)
-
-    const dispatch = useDispatch()
     const navigation = useNavigate();
 
     const toSearch = () => {

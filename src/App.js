@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage/HomePage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import FirmDetailPage from './pages/FirmDetailPage/FirmDetailPage';
 import FirmListDetailPage from './pages/FimListDetailPage/FirmListDetailPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 import {
   Route,
   Routes
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="search/" element={<SearchPage />} />
+        <Route path="login/" element={<LoginPage />} />
         <Route path="detail/:slug" element={<FirmDetailPage />} />
         <Route path="listDetail/:slug" element={<FirmListDetailPage />} />
       </Routes>

@@ -109,6 +109,22 @@ export function getFirmSearch(keysearch) {
     ;
 }
 
+export function getFirmListDetails(type,details) {
+    const pathFull = `https://ophim.cc/_next/data/xh7RZM-AoUeEjC-THHEA3/${type}/${details}.json?slug=${details}`
+    return(
+        axios.get(pathFull).then(
+        (response) => {
+            var result = response.data;
+            return result
+        },
+        (error) => {
+            console.log(error);
+        }
+    )
+    )
+    ;
+}
+
 
 
 

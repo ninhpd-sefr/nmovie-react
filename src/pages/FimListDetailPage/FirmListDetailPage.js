@@ -1,28 +1,41 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import FirmGenres from '../../components/FirmGenres/FirmGenres';
 import FirmList from '../../components/FirmList/FirmList';
-import FirmSeries from '../../components/FirmSeries/SeriesFirm';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import NavBar from '../../components/NavBar/NavBar';
-import { actionGetFirmCountryAsync, actionGetFirmGenresAsync, actionGetFirmSeriesAsync, actionGetFirmSingleAsync } from '../../redux/action';
+import { mappingDataItemFirm } from '../../helps/Helps';
+import { actionGetFirmListDetailsAsync } from '../../redux/action';
 import './firmListDetailPage.css'
 
 function FirmListDetailPage(props) {
     const dispatch = useDispatch()
     const params = useParams()
     const slugList = params.slug;
+    const slugListFilter = slugList.split('=')
+    const typeList = slugListFilter[0]
+    const detailList = slugListFilter[1]
+    const firmList = useSelector(state => state.firmListDetails)
 
-    useEffect(()=>{
-        dispatch(actionGetFirmSeriesAsync())
-        dispatch(actionGetFirmSingleAsync())
-        dispatch(actionGetFirmGenresAsync(slugList))
-        dispatch(actionGetFirmCountryAsync(slugList))
-    },[])
+    useEffect(() => {
+        dispatch(actionGetFirmListDetailsAsync(typeList, detailList))
+    }, [typeList, detailList])
+    if (!firmList.items) {
+        return
+    }
 
+    let itemFirmMap = []
+
+    if (firmList.items) {
+        itemFirmMap = firmList.items.map(item => (
+            mappingDataItemFirm(item)
+        ))
+    }
+
+    console.log(firmList);
     
+
 
     return (
         <div>
@@ -32,6 +45,7 @@ function FirmListDetailPage(props) {
                     <NavBar />
                 </div>
                 <div className='homePage__content-right'>
+                    <FirmList title={firmList.titlePage} dataFirm={firmList} list={itemFirmMap} number={24} />
                 </div>
             </div>
             <Footer />

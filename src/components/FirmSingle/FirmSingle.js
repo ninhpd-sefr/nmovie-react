@@ -21,7 +21,7 @@ function FirmSingle() {
         ))
     } 
     return (
-    <FirmList title= 'FirmSingle' dataFirm = {dataFirm} type='row' list={itemFirmMap} />
+    <FirmList title= 'Firm Single' dataFirm = {dataFirm} type='row' list={itemFirmMap} />
     );
 }
 

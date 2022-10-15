@@ -22,7 +22,7 @@ function FirmGenres(props) {
     } 
     
     return (
-        <FirmList title='FirmGenres' dataFirm = {dataFirm} list={itemFirmMap} />
+        <FirmList title='Firm Genres' dataFirm = {dataFirm} list={itemFirmMap} />
     );
 }
 

@@ -13,11 +13,11 @@ export const mappingDataItemFirm = (data)=>{
     return itemData
 }
 
-// limit amount firm home page
-export const listFirmHomePage = (list)=>{
+
+export const listFirmNumber = (list,number)=>{
     let listFirm = []
     if(list){
-        for (let index = 0; index < 8; index++) {
+        for (let index = 0; index < number; index++) {
             listFirm[index] = list[index]
         }
     }

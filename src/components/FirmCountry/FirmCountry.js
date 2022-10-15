@@ -20,7 +20,7 @@ function FirmCountry(props) {
     } 
     
     return (
-       <FirmList title='FirmCountry' dataFirm ={dataFirm} type = "row" list={itemFirmMap} />
+       <FirmList title='Firm Country' dataFirm ={dataFirm} type = "row" list={itemFirmMap} />
     );
 }
 

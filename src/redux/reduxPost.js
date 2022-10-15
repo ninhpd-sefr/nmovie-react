@@ -1,13 +1,15 @@
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { getFirmItem, getItemFirm, getListFirm, getFirmSearch, getFirmSeries } from '../services/GetFirm';
-import { ACTION_GET_COUNTRY_FIRM, ACTION_GET_GENRES_FIRM, ACTION_GET_SERIES_FIRM, ACTION_GET_SINGLE_FIRM } from './action'
+import { ACTION_GET_COUNTRY_FIRM, ACTION_GET_GENRES_FIRM, ACTION_GET_LIST_FIRM_DETAILS, ACTION_GET_SERIES_FIRM, ACTION_GET_SINGLE_FIRM } from './action'
 
 const intState = {
     firmSeries: [],
     firmSingle: [],
     firmGenres: [],
-    firmCountry: []
+    firmCountry: [],
+    firmListDetails:[]
+
 }
 
 
@@ -32,6 +34,13 @@ function counter(state = intState, action) {
             return {
                 ...state,
                 firmCountry: action.payload
+            }
+        case ACTION_GET_LIST_FIRM_DETAILS:
+            console.log(action.payload);
+            
+            return {
+               ...state,
+               firmListDetails:action.payload
             }
 
         default:

@@ -1,18 +1,18 @@
 import React from 'react';
-import { listFirmHomePage } from '../../helps/Helps';
+import { listFirmHomePage, listFirmNumber } from '../../helps/Helps';
 import Button from '../Button/Button';
 import FirmDetail from '../FirmDetail/FirmDetail';
 import './firmList.css'
 
 function FirmList({
-    title, type, list,dataFirm
+    title, type, list,dataFirm,number = 8
 }) {
 
-    const slugList = `listDetail/${dataFirm.type_list}`
+    const slugList = `listDetail/${dataFirm.params.type_slug}=${dataFirm.type_list}`
     
     
     
-    let listFirmHome = listFirmHomePage(list);    
+    let listFirmHome = listFirmNumber(list,number);    
     if(!listFirmHome){
         return
     }
