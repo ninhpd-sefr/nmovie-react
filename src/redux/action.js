@@ -1,11 +1,15 @@
 import { Await } from "react-router"
-import { getFirmCountry, getFirmGenres, getFirmListDetails, getFirmSeries } from "../services/GetFirm"
+import { getFirmCountry, getFirmGenres, getFirmItem, getFirmListDetails, getFirmSearch, getFirmSeries } from "../services/GetFirm"
 
 export const ACTION_GET_SERIES_FIRM = 'ACTION_GET_SERIES_FIRM'
 export const ACTION_GET_SINGLE_FIRM = 'ACTION_GET_SINGLE_FIRM'
 export const ACTION_GET_GENRES_FIRM = 'ACTION_GET_GENRES_FIRM'
 export const ACTION_GET_COUNTRY_FIRM = 'ACTION_GET_COUNTRY_FIRM'
 export const ACTION_GET_LIST_FIRM_DETAILS = 'ACTION_GET_LIST_FIRM_DETAILS'
+export const ACTION_GET_FIRM_SEARCH = 'ACTION_GET_FIRM_SEARCH'
+export const ACTION_GET_FIRM_ITEM = 'ACTION_GET_FIRM_ITEM'
+
+
 
 
 
@@ -56,6 +60,27 @@ export const actionGetFirmListDetails = ({
   
   return {
     type: ACTION_GET_LIST_FIRM_DETAILS,
+    payload:data
+  }
+}
+
+export const actionGetFirmSearch = ({
+  data
+}) => {
+  
+  return {
+    type: ACTION_GET_FIRM_SEARCH,
+    payload:data
+  }
+}
+
+
+export const actionGetFirmItem = ({
+  data
+}) => {
+  
+  return {
+    type: ACTION_GET_FIRM_ITEM,
     payload:data
   }
 }
@@ -131,3 +156,32 @@ export function actionGetFirmListDetailsAsync(type,details) {
     }
   }
 }
+
+export function actionGetFirmSearchAsync(search) {
+  return async dispatch => {
+    try {
+      const dataApi = await getFirmSearch(search)
+      const data = dataApi.pageProps.data            
+      dispatch(actionGetFirmSearch({data}))
+      
+      
+    } catch (err) {
+      // TODO 
+    }
+  }
+}
+
+export function actionGetFirmItemAsync(slug) {
+  return async dispatch => {
+    try {
+      const dataApi = await getFirmItem(slug)
+      const data = dataApi.pageProps.data           
+      dispatch(actionGetFirmItem({data}))
+      
+      
+    } catch (err) {
+      // TODO 
+    }
+  }
+}
+

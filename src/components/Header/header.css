@@ -55,6 +55,7 @@
     justify-content: flex-end;
     border-radius: 20px;
     border: 2px solid#898989;
+    padding-right:30px ;
 }
 
 .header__search-input input {
@@ -70,4 +71,11 @@
     justify-content: center;
     align-items: center;
 
+}
+
+.header__search-delete{
+    position: absolute;
+    top: 40%;
+    right: 27%;
+    cursor: pointer;
 }

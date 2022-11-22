@@ -19,6 +19,8 @@ function FirmListDetailPage(props) {
     const firmList = useSelector(state => state.firmListDetails)
 
     useEffect(() => {
+        // scroll to top
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         dispatch(actionGetFirmListDetailsAsync(typeList, detailList))
     }, [typeList, detailList])
     if (!firmList.items) {
@@ -33,7 +35,6 @@ function FirmListDetailPage(props) {
         ))
     }
 
-    console.log(firmList);
     
 
 
@@ -45,7 +46,7 @@ function FirmListDetailPage(props) {
                     <NavBar />
                 </div>
                 <div className='homePage__content-right'>
-                    <FirmList title={firmList.titlePage} dataFirm={firmList} list={itemFirmMap} number={24} />
+                    <FirmList title={firmList.titlePage} dataFirm={firmList} list={itemFirmMap} number={24} hideBtn={true} />
                 </div>
             </div>
             <Footer />

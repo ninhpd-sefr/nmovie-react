@@ -14,13 +14,19 @@ function FirmSeries(props) {
 
     let itemFirmMap = []
 
+    // if(itemsFirm){
+    //     itemFirmMap = itemsFirm.map(item =>(
+    //         mappingDataItemFirm(item)
+    //     ))
+    // }    
+
+    // call back function
+    
     if(itemsFirm){
-        itemFirmMap = itemsFirm.map(item =>(
-            mappingDataItemFirm(item)
-        ))
+        itemFirmMap = itemsFirm.map(mappingDataItemFirm)
     }    
     return (
-       <FirmList　title='Firm Series' dataFirm ={dataFirm} list = {itemFirmMap} />
+       <FirmList　title={dataFirm.titlePage} dataFirm ={dataFirm} list = {itemFirmMap} />
     );
 }
 

@@ -1,0 +1,123 @@
+.homePage_details {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* VIdeo */
+.homePage_details-video {
+    position: relative;
+}
+
+.homePage_details-video img {
+    height:700px;
+    width: 1300px;
+    object-fit: cover;
+    opacity: 1;
+    border-radius: 10px;
+}
+
+.homePage_details-video-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    transition: 0.3s;
+}
+
+
+.homePage_details-video-title{
+    position: absolute;
+    display: flex;
+    top: 5%;
+    padding-left: 40px;
+}
+
+.homePage_details-video-title h3{
+    color: white;
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+.homePage_details-video-title h5{
+    content: "";
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 1px;
+    height: 20px;
+    background-color: white;
+}
+
+/* INFO */
+
+.homePage_details-info{
+    padding: 20px 0 40px;
+    display: flex;
+    flex-direction: row;
+}   
+.homePage_details-info-left{
+    width: 20%;
+    
+
+}
+
+.homePage_details-info-left img{
+    width: 90%;
+    height: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+
+}
+.homePage_details-info-center{
+    width: 50%;
+}
+
+.homePage_details-info-center{
+    
+}
+
+.homePage_details-info-center h1{
+    font-size: 25px;
+    font-weight: 500;
+    white-space: 5px    ;
+}
+
+.homePage_details-info-center h2{
+    margin-top: 13px;
+    color: #647690;
+    font-size: 21px;
+    font-weight: 500;
+}
+.homePage_details-info-item{
+    margin-top: 15px;
+}
+
+.homePage_details-info-item h3{
+    font-size: 20x;
+    font-weight: 600;
+}
+
+
+.homePage_details-info-item p{
+    margin-top: 10px;
+    color: #8c8fa2;
+    white-space: 5px;
+}
+
+.homePage_details-info-right{
+    width: 30%;
+}
+
+.homePage_details-info-right .homePage_details-info-item{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homePage_details-info-right p{
+    transform: translateY(-30%);
+    display: flex;
+    flex-wrap: wrap;
+}

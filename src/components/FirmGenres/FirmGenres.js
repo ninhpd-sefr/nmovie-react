@@ -9,6 +9,7 @@ function FirmGenres(props) {
     const dataFirm = useSelector(state => state.firmGenres)    
     const itemsFirm = dataFirm.items
     
+    
     if(!itemsFirm){
         return
     }
@@ -22,7 +23,7 @@ function FirmGenres(props) {
     } 
     
     return (
-        <FirmList title='Firm Genres' dataFirm = {dataFirm} list={itemFirmMap} />
+        <FirmList title={dataFirm.titlePage} dataFirm = {dataFirm} list={itemFirmMap} />
     );
 }
 

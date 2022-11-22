@@ -1,7 +1,7 @@
 import React from 'react';
 import './navBar.css'
 import {FaHome,FaTv} from 'react-icons/fa'
-import { useNavigate,Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function NavBar(props) {
 
@@ -12,7 +12,7 @@ function NavBar(props) {
     }
 
     const toTV = () =>{
-        navigation('/TV')
+        navigation('/developing')
     }
 
     return (

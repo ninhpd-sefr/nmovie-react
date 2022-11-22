@@ -5,19 +5,17 @@ import FirmDetail from '../FirmDetail/FirmDetail';
 import './firmList.css'
 
 function FirmList({
-    title, type, list,dataFirm,number = 8
+    title, type, list,dataFirm,number = 8,hideBtn=false
 }) {
 
-    const slugList = `listDetail/${dataFirm.params.type_slug}=${dataFirm.type_list}`
+    const slugList = `/listDetail/${dataFirm.params.type_slug}=${dataFirm.type_list}`
     
     
     
     let listFirmHome = listFirmNumber(list,number);    
     if(!listFirmHome){
         return
-    }
-    
-    
+    }    
 
     return (
         <div className='firm-list'>
@@ -25,7 +23,7 @@ function FirmList({
                 <h1>
                     {title}
                 </h1>
-                <Button content='See details' as='a' to={slugList}/>
+                {hideBtn ? (<></>): (<Button content='See details' as='button' to={slugList}/>)}
             </div>
             <div className='firm-list-item'>
                {

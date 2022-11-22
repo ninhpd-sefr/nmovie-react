@@ -14,10 +14,14 @@
     border-radius: 10px;
 }
 .nav__list-home{
-    height: 50px;
+    height: 70px;
     width: 50px;
     padding: 15px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .nav__list-Tv{

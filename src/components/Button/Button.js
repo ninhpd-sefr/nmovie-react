@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import './Button.css'
 
 function Button({
-    content, size, type = 'default', as = 'button',to = 'login'
+   href ="", content, size, type = 'default', as = 'button',to = '/login'
 }) {
 
     const classes = cls('btn', {
@@ -13,13 +13,13 @@ function Button({
         'btn-primary': type === 'primary',
         'btn-size-large': size === 'large'
     })
-    
+
     return (
-        as == 'a' ? <Link to={to} className={classes}>
+        as == 'a' ? <a href={href} target="_blank" className={classes}>
             {content}
-        </Link> : <button className={classes}>
+        </a> : <Link to={to} className={classes}>
             {content}
-        </button>
+        </Link>
     );
 }
 

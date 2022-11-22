@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router';
 function FirmDetail({
     type,item
 }) {
-    const slug = 'detail/'+ item.slug
+    const slug = '/detail/'+ item.slug
     const itemImg = `https://img.ophim.cc/uploads/movies/${item.postUrl}`
     const navigation = useNavigate()
     const renderPageDetail = () =>{
@@ -24,17 +24,17 @@ function FirmDetail({
             </div>
         </div>
         <div className='firm-detail-title-row'>
-            <h3>{item.originName}</h3>
+            <h3>{item.name}</h3>
         </div>
     </div> : <div className='firm-detail' onClick={renderPageDetail}>
             <div className='firm-detail-img'>
                 <img src={itemImg} />
                 <div className='firm-detail-img-button' >
-                    <Button type='default' content='Watch now' size='large' to = {item.slug} as = 'a' />
+                    <Button type='default' content='Watch now' size='large' to = {item.slug} as = 'button' />
                 </div>
             </div>
             <div className='firm-detail-title'>
-                <h3>{item.originName}</h3>
+                <h3>{item.name}</h3>
             </div>
         </div>
     );

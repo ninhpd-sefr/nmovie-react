@@ -17,7 +17,9 @@
       background-color: #e2e8f0; }
       .btn-default:hover {
         color: #fff;
-        background-color: #717171; }
+        background-color: #717171;
+        text-decoration: none !important;
+      }
     .btn-primary {
       color: #fff;
         font-size: 1.2em;

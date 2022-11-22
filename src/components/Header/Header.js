@@ -1,17 +1,47 @@
 import './header.css'
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../Button/Button';
 import { useNavigate } from 'react-router-dom';
 import images from '../../assets/images/logo.png'
-import { FaSistrix } from 'react-icons/fa'
+import { FaSistrix ,FaChevronLeft} from 'react-icons/fa'
+import { useDispatch } from 'react-redux';
+import { actionGetFirmSearchAsync } from '../../redux/action';
 
 
 function Header(props) {
     const navigation = useNavigate();
+    const dispatch = useDispatch();
+    const [message, setMessage] = useState('');
+
+    const handleChange = event => {
+        setMessage(event.target.value);
+    }
+
+    const handleDelete =()=>{
+        setMessage('')
+    }
 
     const toSearch = () => {
-        navigation('search')
+        if(!message){
+            return
+        }
+        const queryStrURI = encodeURIComponent(message)
+        const slugSearch = `/search/` + queryStrURI
+        dispatch(actionGetFirmSearchAsync(message))
+        navigation(slugSearch)
     }
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          if(!message){
+            return
+        }
+        const queryStrURI = encodeURIComponent(message)
+        const slugSearch = `/search/` + queryStrURI
+        dispatch(actionGetFirmSearchAsync(message))
+        navigation(slugSearch)
+        }
+      };
 
 
     return (
@@ -30,7 +60,23 @@ function Header(props) {
                     <FaSistrix size={23} />
                 </div>
                 <div className='header__search-input'>
-                    <input placeholder='Search Movies ...' />
+                    <input placeholder='Search Movies ...'
+                        type="text"
+                        id="message"
+                        name="message"
+                        onChange={handleChange}
+                        value={message}
+                        onKeyDown={handleKeyDown}
+                    />
+                </div>
+
+                {
+                    message ?   <div className='header__search-delete' onClick={handleDelete} >
+                    <FaChevronLeft size={20} />
+                 </div> : ""
+                }
+                <div>
+
                 </div>
             </div>
 
